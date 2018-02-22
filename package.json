@@ -8,10 +8,10 @@
   },
   "keywords": [],
   "author": "Nicholas Kurtz nicholas.kurtz31415@gmail.com ",
-  "license": "ISC"
+  "license": "ISC",
   "repository":
   {
-    "type":"git"
+    "type":"git",
     "url":"https://github.com/DGS-2CodeClub/MassSpec.git"
   }
 }
