@@ -1,10 +1,21 @@
 # MassSpec
 
-## 1. Setup
+## Commands
+
+###1. Setup
 
 `npm install`
 
-## 2. Setup Mocha testing framework
+###2. Compile
+`npm run compile`
+
+###3. Run Dev Server
+
+Start the development server with this command:
+ 
+`npm start`
+
+## Setup Mocha testing framework
 
 Once your project is loaded in IntelliJ go through the following steps to setup Mocha (JavaScript) tests.
 
