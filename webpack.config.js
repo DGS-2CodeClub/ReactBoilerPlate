@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  context: path.join(__dirname, 'MassSpec'),
+  context: path.join(__dirname, 'main'),
   entry: [
-    './main.js',
+    './Main.js',
   ],
   output: {
     path: path.join(__dirname, 'www'),

@@ -2,7 +2,7 @@
   "name": "MassSpec",
   "version": "1.0.0",
   "description": "This is to be used to identify existing/potential talent",
-  "main": "main.js",
+  "main": "Interests.js",
   "scripts": {
     "compile": "webpack",
     "start": "node server.js",
