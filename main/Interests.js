@@ -2,11 +2,25 @@ import React from 'react';
 import Card from "../node_modules/material-ui/Card/Card";
 
 class Interests extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      count: 0,
-    };
+  constructor(props) {
+    super(props);
+    this.state = {skillValue: '3', interestValue: '3', skillName: ''};
+
+    this.handleChangeSkill = this.handleChangeSkill.bind(this);
+    this.handleChangeInterest = this.handleChangeInterest.bind(this);
+    this.handleChangeSkillName = this.handleChangeSkillName.bind(this)
+  }
+
+  handleChangeSkill(event) {
+    this.setState({skillValue: event.target.value});
+  }
+
+  handleChangeInterest(event) {
+    this.setState({interestValue: event.target.value});
+  }
+
+  handleChangeSkillName(event) {
+    this.setState({skillName: event.target.value});
   }
 
   render() {

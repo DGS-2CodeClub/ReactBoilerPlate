@@ -3,11 +3,11 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Interest from './Interests';
+import MasterCard from './MasterCard'
 
 document.addEventListener('DOMContentLoaded', function() {
   ReactDOM.render(
-    React.createElement(Interest),
+    React.createElement(MasterCard),
     document.getElementById('mount')
   );
 });
