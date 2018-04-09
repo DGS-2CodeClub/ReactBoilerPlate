@@ -1,10 +1,14 @@
 import React from 'react';
 import Card from "../node_modules/material-ui/Card/Card";
+import "./CSS/interest_styles.scss"
+import TextField from "../node_modules/material-ui/TextField/TextField";
+import Button from "material-ui/es/Button/Button";
+import Grid from "material-ui/es/Grid/Grid";
 
 class Interests extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {skillValue: '3', interestValue: '3', skillName: ''};
+    this.state = {skillValue: '3', interestValue: '3', skillName: '', tableVisible: false};
 
     this.handleChangeSkill = this.handleChangeSkill.bind(this);
     this.handleChangeInterest = this.handleChangeInterest.bind(this);
@@ -23,21 +27,29 @@ class Interests extends React.Component {
     this.setState({skillName: event.target.value});
   }
 
-  render() {
+  render(){
     return (
       <div>
-        <Card className = 'card_main'>
+        <Card className = {['interests_card', 'card']}>
+          <Grid
+            container
+            justify = 'center'
+            alignItems = 'center'
+            direction = 'column'
+          >
           <div className = 'title'>
             WHAT VOODOO DO YOU DO?
           </div>
-          <ul className = 'interest_input'>
+          <ul>
             <li>
-              <input
+              <TextField
                 className = 'skill_name_input'
                 type = 'text'
+                placeholder= "What's interests you?"
                 onChange = {this.handleChangeSkillName}
                 value = {this.state.skillName}
                 autoFocus
+                fullWidth = {true}
               />
 
             </li>
@@ -64,14 +76,21 @@ class Interests extends React.Component {
               />
 
             </li>
-          </ul>
-          <div className = 'footer'>
-            <input
+
+            <Button
+              variant = 'raised'
+              color = 'primary'
               className = 'submit_button'
-              type = 'submit'
-              value = 'Submit'
-            />
-          </div>
+              size = 'large'
+            >Submit</Button>
+          </ul>
+            <Button
+              varian = 'raised'
+              color = 'primary'
+              className = 'next_button'
+            >Next
+            </Button>
+          </Grid>
         </Card>
       </div>
     );

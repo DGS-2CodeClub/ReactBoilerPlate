@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import Card from "../node_modules/material-ui/Card/Card";
+import TextField from "../node_modules/material-ui/TextField/TextField";
 
 class UserInfo extends React.Component{
   constructor(props) {
@@ -10,49 +11,60 @@ class UserInfo extends React.Component{
     this.state = {firstName: '', lastName: '', edipi: '', rank: '', squadron: ''};
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleFocusText = this.handleFocusText.bind(this);
-    this.handleChangeName = this.handleChangeName.bind(this);
+    this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
+
+    this.handleChangeLastName = this.handleChangeLastName.bind(this);
+    this.handleChangeEdipi = this.handleChangeEdipi.bind(this);
+
   }
 
-  handleFocusText(event) {
-    if(this.state.firstName === 'First Name'){
-      this.setState({firstName: ''})
-    }
-  }
   handleChange(event) {
     this.setState({value: event.target.value});
   }
-  handleChangeName(event) {
+  handleChangeFirstName(event) {
 
-    this.setState({firstName: event.target.value});
+  this.setState({firstName: event.target.value});
+}
+  handleChangeLastName(event) {
+
+    this.setState({lastName: event.target.value});
+  }
+  handleChangeEdipi(event) {
+    alert(event.target.name)
+    this.setState({edipi: event.target.value});
   }
 
   render(){
     return(
     <div>
-      <Card>
+      <Card className = {['user_info_card', 'card']}>
         <ul className = 'interest_input'>
           <li>
-            <input
+            <TextField
               className = 'firstName'
               type = 'text'
+              placeholder= 'First Name'
+              margin= 'normal'
               value = {this.state.firstName}
-              onFocus = {this.handleFocusText}
-              onChange = {this.handleChangeName}
+              onChange = {this.handleChangeFirstName}
             />
           </li>
           <li>
-            <input
+            <TextField
+              margin= 'normal'
+              placeholder= 'Last Name'
               className = 'laneName'
-              type = 'text'
-              value = 'Last Name'
+              onChange= {this.handleChangeLastName}
+              value = {this.state.lastName}
             />
           </li>
           <li>
-            <input
+            <TextField
+              margin= 'normal'
+              placeholder= 'EDIPI'
               className = 'edipi'
-              type = 'text'
-              value = 'EDIPI'
+              onChange={this.handleChangeEdipi}
+              value = {this.state.edipi}
             />
           </li>
           <li>

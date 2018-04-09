@@ -24,12 +24,13 @@
     "material-ui": "^1.0.0-beta.40",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "style-loader": "^0.20.3",
     "webpack": "^3.11.0",
     "webpack-dev-middleware": "^2.0.6"
   },
   "devDependencies": {
+    "css-loader": "^0.28.11",
     "node-sass": "^4.8.3",
-    "sass-loader": "^6.0.7"
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3"
   }
 }

@@ -1,20 +1,27 @@
+ul{
+  list-style-type: none;
+}
+
 .main_card{
   text-align: center;
+}
+
+.card{
+  width: 66vw;
+  min-width: 600px;
 }
 
 .top_buffer{
   height: 20%;
   min-height: 100px;
 }
-
+.interest_input{
+  width: 400px;
+}
 .title {
   font-family: AvenirNext-Bold;
-  font-size: 36px;
+  font-size: 64px;
   color: #4A4A4A;
-}
-
-.interest_input{
-  list-style: none;
 }
 
 .big_slider {
@@ -57,33 +64,6 @@
   text-align: left;
   width: 20%;
   min-width: 400px;
-  font-size: 24px;
+  font-size: 48px;
   font-family: AvenirNext
-}
-
-.footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  text-align: center;
-
-  .submit_button{
-    background: #007AFF;
-    color: #FFFFFF;
-    border: 1px solid #007AFF;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px #EEEEEE;
-    text-shadow:none;
-    width: 15%;
-    min-width: 300px;
-    cursor: pointer;
-    height: 30px;
-
-    &:hover, &:focus{
-      background: #016ABC;
-      outline: none;
-    }
-  }
 }
