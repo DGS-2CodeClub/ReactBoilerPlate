@@ -4,13 +4,14 @@
 import React from 'react';
 import Card from "../node_modules/material-ui/Card/Card";
 import TextField from "../node_modules/material-ui/TextField/TextField";
+import Select from "material-ui/es/Select/Select";
+import MenuItem from "material-ui/es/Menu/MenuItem";
 
 class UserInfo extends React.Component{
   constructor(props) {
     super(props);
     this.state = {firstName: '', lastName: '', edipi: '', rank: '', squadron: ''};
 
-    this.handleChange = this.handleChange.bind(this);
     this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
 
     this.handleChangeLastName = this.handleChangeLastName.bind(this);
@@ -18,18 +19,15 @@ class UserInfo extends React.Component{
 
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-  handleChangeFirstName(event) {
+  handleChangeFirstName = (event) => {
 
   this.setState({firstName: event.target.value});
 }
-  handleChangeLastName(event) {
+  handleChangeLastName = (event) =>{
 
     this.setState({lastName: event.target.value});
   }
-  handleChangeEdipi(event) {
+  handleChangeEdipi = (event) => {
     alert(event.target.name)
     this.setState({edipi: event.target.value});
   }
@@ -68,25 +66,31 @@ class UserInfo extends React.Component{
             />
           </li>
           <li>
-            <select>
-              <option value="airmenBasic">AB</option>
-              <option value="airmen">Amn</option>
-              <option value="airmenfirst">A1C</option>
-              <option value="staffsgt">SSgt</option>
-              <option value="techsgt">TSgt</option>
-              <option value="mastersgt">MSgt</option>
-              <option value="seniorsgt">SMSgt</option>
-              <option value="chief">CMSgt</option>
-            </select>
+            <Select
+              className = 'rank'
+              value = {this.state.rank}
+            >
+              <MenuItem value={10}>AB</MenuItem>
+              <MenuItem value={20}>Amn</MenuItem>
+              <MenuItem value={30}>A1C</MenuItem>
+              <MenuItem value={4}>SSgt</MenuItem>
+              <MenuItem value={5}>TSgt</MenuItem>
+              <MenuItem value={6}>MSgt</MenuItem>
+              <MenuItem value={7}>SMSgt</MenuItem>
+              <MenuItem value={8}>CMSgt</MenuItem>
+            </Select>
           </li>
           <li>
-            <select>
-              <option value="thirsh">13 IS</option>
-              <option value="forthish">48 IS</option>
-              <option value="fithish">548 OSS</option>
-              <option value="ninish">9 IS</option>
-              <option value="groupish">548 ISRG</option>
-            </select>
+            <Select
+              className = 'squadron'
+              value = {this.state.rank}
+            >
+              <MenuItem value={13}>13 IS</MenuItem>
+              <MenuItem value={48}>48 IS</MenuItem>
+              <MenuItem value={548}>548 OSS</MenuItem>
+              <MenuItem value={9}>9 IS</MenuItem>
+              <MenuItem value={5482}>548 ISRG</MenuItem>
+            </Select>
           </li>
           <li>
             <input className = 'submit'

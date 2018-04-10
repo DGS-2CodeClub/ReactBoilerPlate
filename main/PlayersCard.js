@@ -3,6 +3,8 @@
  */
 import React from 'react'
 import Card from "../node_modules/material-ui/Card/Card";
+import Select from "material-ui/es/Select/Select";
+import MenuItem from "material-ui/es/Menu/MenuItem";
 
 class PlayersCard extends React.Component{
 
@@ -18,24 +20,11 @@ class PlayersCard extends React.Component{
       interestValue: '3',
       skillName: ''
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleFocusText = this.handleFocusText.bind(this);
-    this.handleChangeName = this.handleChangeName.bind(this);
   }
 
-  handleFocusText(event) {
-    if(this.state.firstName === 'First Name'){
-      this.setState({firstName: ''})
-    }
-  }
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-  handleChangeName(event) {
-
-    this.setState({firstName: event.target.value});
-  }
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
 
   render(){
@@ -48,13 +37,12 @@ class PlayersCard extends React.Component{
                 className = 'firstName'
                 type = 'text'
                 value = {this.state.firstName}
-                onFocus = {this.handleFocusText}
-                onChange = {this.handleChangeName}
+                onChange = {this.handleChange}
               />
             </li>
             <li>
               <input
-                className = 'laneName'
+                className = 'lastName'
                 type = 'text'
                 value = 'Last Name'
               />
@@ -67,19 +55,27 @@ class PlayersCard extends React.Component{
               />
             </li>
             <li>
-              <select>
-                <option value="airmenBasic">AB</option>
-                <option value="airmen">Amn</option>
-                <option value="airmenfirst">A1C</option>
-                <option value="staffsgt">SSgt</option>
-                <option value="techsgt">TSgt</option>
-                <option value="mastersgt">MSgt</option>
-                <option value="seniorsgt">SMSgt</option>
-                <option value="chief">CMSgt</option>
-              </select>
+              <Select
+                className = 'rank'
+                value = {this.state.rank}
+                onChange = {this.handleChange}
+              >
+                <MenuItem value={1}>AB</MenuItem>
+                <MenuItem value={2}>Amn</MenuItem>
+                <MenuItem value={3}>A1C</MenuItem>
+                <MenuItem value={4}>SSgt</MenuItem>
+                <MenuItem value={5}>TSgt</MenuItem>
+                <MenuItem value={6}>MSgt</MenuItem>
+                <MenuItem value={7}>SMSgt</MenuItem>
+                <MenuItem value={8}>CMSgt</MenuItem>
+              </Select>
             </li>
             <li>
-              <select>
+              <select
+                className = 'squadron'
+                value = {this.state.squadron}
+                onChange = {this.handleChange}
+              >
                 <option value="thirsh">13 IS</option>
                 <option value="forthish">48 IS</option>
                 <option value="fithish">548 OSS</option>
