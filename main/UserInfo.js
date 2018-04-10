@@ -13,7 +13,6 @@ class UserInfo extends React.Component{
     this.state = {firstName: '', lastName: '', edipi: '', rank: '', squadron: ''};
 
     this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
-
     this.handleChangeLastName = this.handleChangeLastName.bind(this);
     this.handleChangeEdipi = this.handleChangeEdipi.bind(this);
 
